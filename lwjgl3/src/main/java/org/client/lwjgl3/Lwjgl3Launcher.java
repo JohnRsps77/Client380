@@ -1,13 +1,18 @@
 package org.client.lwjgl3;
 
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import org.client.Client;
+
+import java.util.logging.Level;
 
 /** Launches the desktop (LWJGL3) application. */
 public class Lwjgl3Launcher {
     public static void main(String[] args) {
         createApplication();
+        Gdx.app.setLogLevel(Application.LOG_DEBUG);
     }
 
     private static Lwjgl3Application createApplication() {

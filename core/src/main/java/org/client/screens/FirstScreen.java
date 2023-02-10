@@ -14,7 +14,7 @@ public class FirstScreen implements Screen {
     @Override
     public void render(float delta) {
         // Draw your screen here. "delta" is the time since last render in seconds.
-
+        ScreenUtils.clear(Color.BLUE);
     }
 
     @Override
