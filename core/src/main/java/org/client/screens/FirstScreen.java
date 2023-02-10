@@ -1,4 +1,4 @@
-package org.client;
+package org.client.screens;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
@@ -14,7 +14,7 @@ public class FirstScreen implements Screen {
     @Override
     public void render(float delta) {
         // Draw your screen here. "delta" is the time since last render in seconds.
-        ScreenUtils.clear(Color.BLUE);
+
     }
 
     @Override
