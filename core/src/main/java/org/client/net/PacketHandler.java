@@ -1,18 +1,31 @@
 package org.client.net;
 
+import java.io.InputStream;
+
 import static org.client.net.PacketConstants.PACKET_SIZES;
 
 public class PacketHandler {
 
-    public static void handle(int opcode) {
+    private static final int CYCLES = 100;
 
-        int size = PACKET_SIZES[opcode];
+    public static void handle(InputStream inputStream) {
+        try {
+            if(inputStream.available() == 0) {
+                return;
+            }
 
-        switch (opcode) {
-            case PacketConstants.TEMP_OPCODE -> {
+            int opcode = inputStream.read();
+            int size = PACKET_SIZES[opcode];
+
+            switch (opcode) {
+                case PacketConstants.TEMP_OPCODE -> {
+
+                }
 
             }
 
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

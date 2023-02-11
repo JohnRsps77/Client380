@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41630e99-976a-492e-b83f-26740c44cd49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/client/net/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/screens/FirstScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/client/screens/FirstScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/java/org/client/lwjgl3/Lwjgl3Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/lwjgl3/src/main/java/org/client/lwjgl3/Lwjgl3Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/client/net/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

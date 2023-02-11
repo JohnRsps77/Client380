@@ -6,6 +6,11 @@ import java.net.Socket;
 
 public class ClientHandler implements Runnable {
 
+    /**
+     * amount of packet processes per client ticks
+     */
+    private static final int PACKET_PROCESSES_AMOUNT = 25;
+
     private Socket socket;
     private InputStream inStream;
     private OutputStream outStream;
@@ -27,12 +32,9 @@ public class ClientHandler implements Runnable {
         while (true) {
 
             try {
-
-                if(inStream.available() != 0) {
-
-                   // PacketHandler.handle();
+                for(int i = 0; i < PACKET_PROCESSES_AMOUNT; i++) {
+                    PacketHandler.handle(inStream);
                 }
-
 
             } catch (Exception e) {
                 e.printStackTrace();
