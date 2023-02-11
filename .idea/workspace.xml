@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41630e99-976a-492e-b83f-26740c44cd49" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/client/net/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
