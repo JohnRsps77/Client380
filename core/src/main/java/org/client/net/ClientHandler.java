@@ -33,7 +33,7 @@ public class ClientHandler implements Runnable {
 
             try {
                 for(int i = 0; i < PACKET_PROCESSES_AMOUNT; i++) {
-                    PacketHandler.handle(inStream);
+                    PacketHandler.handleDecoder(inStream);
                 }
 
             } catch (Exception e) {
@@ -41,5 +41,9 @@ public class ClientHandler implements Runnable {
             }
 
         }
+    }
+
+    public OutputStream getOutStream() {
+        return outStream;
     }
 }

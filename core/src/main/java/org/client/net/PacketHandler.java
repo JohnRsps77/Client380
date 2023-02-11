@@ -4,29 +4,22 @@ import com.badlogic.gdx.Gdx;
 
 import java.io.InputStream;
 
-import static org.client.net.PacketConstants.PACKET_SIZES;
+import static org.client.net.PacketConstants.PACKET_DECODERS;
 
 public class PacketHandler {
 
     private static final int CYCLES = 100;
 
-    public static void handle(InputStream inputStream) {
+    public static void handleDecoder(InputStream inputStream) {
         try {
             if(inputStream.available() == 0) {
                 return;
             }
 
             int opcode = inputStream.read();
-            int size = PACKET_SIZES[opcode];
-
             Gdx.app.log("Opcode", opcode + " of size " + inputStream.available());
 
-            switch (opcode) {
-                case PacketConstants.TEMP_OPCODE -> {
-
-                }
-
-            }
+            PACKET_DECODERS[opcode].decode(inputStream);
 
             int len = inputStream.available();
             if(len != 0) {
