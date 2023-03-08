@@ -17,7 +17,9 @@ public class ApplicationLauncher extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        Client.INSTANCE = new Client();
+        Client.INSTANCE.start();
         launch();
     }
 }
