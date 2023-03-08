@@ -23,7 +23,7 @@
             <Font name="Gill Sans Ultra Bold" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="88.0" layoutY="177.0" prefHeight="27.0" prefWidth="92.0" text="First Name">
+      <Label layoutX="88.0" layoutY="177.0" prefHeight="27.0" prefWidth="92.0" text="Name">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
@@ -33,20 +33,15 @@
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="359.0" layoutY="177.0" prefHeight="27.0" prefWidth="81.0" text="Last Name">
-         <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
-         </font>
-      </Label>
       <Label layoutX="88.0" layoutY="266.0" prefHeight="27.0" prefWidth="81.0" text="Email">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="359.0" layoutY="223.0" prefHeight="25.0" prefWidth="168.0" />
-      <TextField layoutX="88.0" layoutY="301.0" prefHeight="25.0" prefWidth="436.0" />
-      <PasswordField layoutX="88.0" layoutY="373.0" prefHeight="25.0" prefWidth="436.0" />
-      <DatePicker layoutX="85.0" layoutY="447.0" prefHeight="25.0" prefWidth="168.0" />
+      <TextField fx:id="txt_name" layoutX="85.0" layoutY="223.0" prefHeight="25.0" prefWidth="436.0" />
+      <TextField fx:id="txt_Email" layoutX="88.0" layoutY="301.0" prefHeight="25.0" prefWidth="436.0" />
+      <PasswordField fx:id="txt_Password" layoutX="88.0" layoutY="373.0" prefHeight="25.0" prefWidth="436.0" />
+      <DatePicker fx:id="txt_DoB" layoutX="85.0" layoutY="447.0" prefHeight="25.0" prefWidth="168.0" />
       <Label layoutX="88.0" layoutY="410.0" prefHeight="27.0" prefWidth="106.0" text="Date of birth">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
@@ -57,7 +52,7 @@
             <Image url="@../images/UpLoadYourImg.png" />
          </image>
       </ImageView>
-      <TextField layoutX="85.0" layoutY="223.0" prefHeight="25.0" prefWidth="168.0" />
       <Button layoutX="383.0" layoutY="447.0" mnemonicParsing="false" text="Choose your Image" />
+      <Button layoutX="274.0" layoutY="680.0" mnemonicParsing="false" onAction="#SignUpAction" text="Register" />
    </children>
 </AnchorPane>
