@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f0882c1-348b-4857-bd8b-ed578ef3c91d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/client/SceneManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/SceneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/login-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/SignUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/UpLoadYourImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/views/signup-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/ApplicationLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/ApplicationLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/SceneManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/client/login-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -58,6 +54,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2MU0wH03VjeocRM4mL03WR3snLV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/University/COMP 380/Client380/src/main/resources/com/client",
+    "last_opened_file_path": "E:/University/Srping 2023/COMP 380/Client380/src/main/resources/images",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
@@ -77,6 +76,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\University\Srping 2023\COMP 380\Client380\src\main\resources\images" />
       <recent name="C:\University\COMP 380\Client380\src\main\resources\com\client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
