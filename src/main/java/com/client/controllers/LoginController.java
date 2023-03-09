@@ -26,7 +26,11 @@ public class LoginController implements Initializable {
         sceneManager.switchScene(event, sceneType);
     }
 
-
+    @FXML
+    public void switchToSignUpScene(ActionEvent event) throws IOException {
+        SceneManager.SceneType sceneType = SceneManager.SceneType.SIGNUP_SCENE;
+        sceneManager.switchScene(event, sceneType);
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }

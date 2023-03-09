@@ -22,8 +22,8 @@ public class SceneManager {
 
     public enum SceneType {
         LOGIN_SCENE("views/login-view.fxml"),
-        MAIN_SCENE("views/main-view.fxml");
-
+        MAIN_SCENE("views/main-view.fxml"),
+        SIGNUP_SCENE("views/signup-view.fxml");
         private final String sceneFile;
 
         SceneType(String sceneFile) {
