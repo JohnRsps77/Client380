@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.LoginController">
+   <children>
+      <ImageView fitHeight="563.0" fitWidth="562.0" layoutX="-71.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../images/background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="166.0" layoutX="672.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="598.0" layoutY="186.0" prefHeight="27.0" prefWidth="81.0" text="Username">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="598.0" layoutY="279.0" prefHeight="27.0" prefWidth="81.0" text="Password">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="598.0" layoutY="232.0" prefHeight="25.0" prefWidth="306.0" />
+      <Button layoutX="598.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="38.0" prefWidth="126.0" text="Login" />
+      <PasswordField layoutX="598.0" layoutY="321.0" prefHeight="25.0" prefWidth="306.0" />
+      <Button layoutX="778.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToSignUpScene" prefHeight="38.0" prefWidth="126.0" text="Create Account" />
+      <Label layoutX="598.0" layoutY="443.0" onMouseClicked="#moreHelp" prefHeight="27.0" prefWidth="323.0" text="Need help with your account?. Click here">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
