@@ -57,7 +57,7 @@ public class SignUpController {
         fileChoser.setTitle("Chose Image...");
         this.filePath = fileChoser.showOpenDialog(stage);
         try {
-            Image image = new Image(new FileInputStream(filePath));
+            Image image = new Image(new FileInputStream(filePath),128,128,false,false);
             img_profileImg.setImage(image);
         }catch (IOException e)
         {
