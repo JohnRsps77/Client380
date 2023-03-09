@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="1000.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.SignUpController">
    <children>
       <ImageView fitHeight="118.0" fitWidth="123.0" layoutX="241.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -47,12 +46,12 @@
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="359.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img_profileImg" fitHeight="128.0" fitWidth="128.0" layoutX="379.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/UpLoadYourImg.png" />
          </image>
       </ImageView>
-      <Button layoutX="383.0" layoutY="447.0" mnemonicParsing="false" text="Choose your Image" />
+      <Button layoutX="383.0" layoutY="447.0" mnemonicParsing="false" onAction="#ChooseImageAction" text="Choose your Image" />
       <Button layoutX="274.0" layoutY="680.0" mnemonicParsing="false" onAction="#SignUpAction" text="Register" />
    </children>
 </AnchorPane>

@@ -2,13 +2,26 @@ package com.client.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.awt.image.BufferedImage;
 
 public class SignUpController {
 
@@ -23,6 +36,10 @@ public class SignUpController {
     @FXML
     private DatePicker txt_DoB;
     @FXML
+    private ImageView img_profileImg;
+    private FileChooser fileChoser;
+    private File filePath;
+    @FXML
     public void SignUpAction(ActionEvent event) throws IOException
     {
         name = txt_name.getText();
@@ -32,5 +49,19 @@ public class SignUpController {
         dob = dateOfBirth.format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
         System.out.println(name);
     }
-
+    @FXML
+    public void ChooseImageAction(ActionEvent event) throws IOException
+    {
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        fileChoser = new FileChooser();
+        fileChoser.setTitle("Chose Image...");
+        this.filePath = fileChoser.showOpenDialog(stage);
+        try {
+            Image image = new Image(new FileInputStream(filePath));
+            img_profileImg.setImage(image);
+        }catch (IOException e)
+        {
+            System.err.println(e.getMessage());
+        }
+    }
 }
