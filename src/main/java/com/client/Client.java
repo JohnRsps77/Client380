@@ -2,7 +2,11 @@ package com.client;
 
 import com.client.model.LoginDetails;
 import com.client.model.RegistrationDetails;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -13,7 +17,7 @@ import java.util.concurrent.Executors;
 
 public class Client implements Runnable {
 
-    public static Client INSTANCE = new Client();
+    public static Client INSTANCE;
     private static final int PORT = 85;
     private static final String host = "localhost";
     private static final byte STRING_TERMINATOR = 0;
@@ -21,6 +25,12 @@ public class Client implements Runnable {
     public OutputStream outputStream;
 
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
+    public final Stage primaryStage;
+
+    public Client(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        INSTANCE = this;
+    }
 
     public void start() {
         executorService.submit(this);
@@ -79,6 +89,35 @@ public class Client implements Runnable {
     }
 
     public void sendRegistrationDetails(RegistrationDetails registrationDetails) {
+        String email = registrationDetails.email();
+        String username = registrationDetails.username();
+        String password = registrationDetails.password();
+        String DOB = registrationDetails.DOB();
+        int profileImageLength = registrationDetails.profileImageLength();
+        byte[] profileImageData = registrationDetails.profileImageData();
+        // add 4 to size to include the string terminator for email,username,password and DOB + 1 for opcode and + 2 for profile image length short
+        int size = email.length() + username.length() + password.length() + DOB.length() + profileImageData.length + 7;
+        System.out.println("SIZE: " + size);
+        ByteBuffer buffer = ByteBuffer.allocate(size);
+        buffer.put((byte) 0)
+                .put(email.getBytes())
+                .put(STRING_TERMINATOR)
+                .put(username.getBytes())
+                .put(STRING_TERMINATOR)
+                .put(password.getBytes())
+                .put(STRING_TERMINATOR)
+                .put(DOB.getBytes())
+                .put(STRING_TERMINATOR)
+                .putShort((short) profileImageLength)
+                .put(profileImageData);
 
+        System.out.println("Putting: " + DOB);
+        System.out.println("Putting profileImageLength: " + (short) profileImageLength + " for data length: " + profileImageData.length);
+
+        try {
+            outputStream.write(buffer.array());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

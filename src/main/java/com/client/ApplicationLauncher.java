@@ -8,8 +8,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ApplicationLauncher extends Application {
+
+
     @Override
     public void start(Stage stage) throws IOException {
+        new Client(stage).start();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("views/login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
@@ -18,8 +21,6 @@ public class ApplicationLauncher extends Application {
     }
 
     public static void main(String[] args) throws Exception {
-        Client.INSTANCE = new Client();
-        Client.INSTANCE.start();
         launch();
     }
 }
