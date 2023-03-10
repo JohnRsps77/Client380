@@ -55,6 +55,10 @@ public class SignUpController {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         fileChoser = new FileChooser();
         fileChoser.setTitle("Chose Image...");
+        fileChoser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PNG Files", "*.png")
+                ,new FileChooser.ExtensionFilter("JPEG Files", "*.jpeg")
+        );
         this.filePath = fileChoser.showOpenDialog(stage);
         try {
             Image image = new Image(new FileInputStream(filePath),128,128,false,false);
