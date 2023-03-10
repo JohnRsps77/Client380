@@ -34,8 +34,8 @@
       <TextField layoutX="598.0" layoutY="232.0" prefHeight="25.0" prefWidth="306.0" />
       <Button layoutX="598.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="38.0" prefWidth="126.0" text="Login" />
       <PasswordField layoutX="598.0" layoutY="321.0" prefHeight="25.0" prefWidth="306.0" />
-      <Button layoutX="778.0" layoutY="386.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="126.0" text="Create Account" />
-      <Label layoutX="598.0" layoutY="443.0" prefHeight="27.0" prefWidth="323.0" text="Need help with your account?. Click here" onMouseClicked="#moreHelp">
+      <Button layoutX="778.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToSignUpScene" prefHeight="38.0" prefWidth="126.0" text="Create Account" />
+      <Label layoutX="598.0" layoutY="443.0" onMouseClicked="#moreHelp" prefHeight="27.0" prefWidth="323.0" text="Need help with your account?. Click here">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>

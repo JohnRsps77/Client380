@@ -25,7 +25,7 @@ tasks.withType(JavaCompile) {
 
 application {
     mainModule = 'com.client'
-    mainClass = 'com.client.HelloApplication'
+    mainClass = 'com.client.ApplicationLauncher'
 }
 
 javafx {
@@ -37,6 +37,12 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+    // https://mvnrepository.com/artifact/io.netty/netty-all
+    implementation("io.netty:netty-all:4.1.89.Final")
+    // https://mvnrepository.com/artifact/org.openjfx/javafx
+    implementation("org.openjfx:javafx:11")
+
 }
 
 test {

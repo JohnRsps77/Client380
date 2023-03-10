@@ -1,5 +1,6 @@
 package com.client.controllers;
 
+import com.client.Client;
 import com.client.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,19 +19,19 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    public final SceneManager sceneManager = new SceneManager();
-
     @FXML
-    public void switchToMainScene(ActionEvent event) throws IOException {
-        SceneManager.SceneType sceneType = SceneManager.SceneType.MAIN_SCENE;
-        sceneManager.switchScene(event, sceneType);
+    public void switchToMainScene() throws IOException {
+        Client.getInstance().getSceneManager().switchScene(SceneManager.SceneType.MAIN_SCENE);
     }
 
+    @FXML
+    public void switchToSignUpScene() throws IOException {
+        Client.getInstance().getSceneManager().switchScene(SceneManager.SceneType.SIGNUP_SCENE);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
-
 
     @FXML
     public void moreHelp(MouseEvent mouseEvent) {
