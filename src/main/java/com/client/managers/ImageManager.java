@@ -11,7 +11,8 @@ import java.util.HashMap;
 
 public class ImageManager {
 
-    private static final String CLIENT_ID = "26750b1542decce";
+    private static final String CLIENT_ID = "Client-ID 26750b1542decce";
+    private static final String UPLOAD_URL = "https://api.imgur.com/3/image";
 
     private final HashMap<String, Image> cachedImages = new HashMap<>();
 
@@ -23,9 +24,9 @@ public class ImageManager {
                 .build();
 
         Request request = new Request.Builder()
-                .url("https://api.imgur.com/3/image")
+                .url(UPLOAD_URL)
                 .method("POST", body)
-                .addHeader("Authorization", "Client-ID " + CLIENT_ID)
+                .addHeader("Authorization", CLIENT_ID)
                 .build();
 
         return client.newCall(request).execute();
