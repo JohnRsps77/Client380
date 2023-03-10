@@ -17,7 +17,8 @@ import java.util.concurrent.Executors;
 
 public class Client implements Runnable {
 
-    public static Client INSTANCE;
+    private static Client INSTANCE;
+    private final SceneManager sceneManager = new SceneManager();
     private static final int PORT = 85;
     private static final String host = "localhost";
     private static final byte STRING_TERMINATOR = 0;
@@ -119,5 +120,13 @@ public class Client implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public SceneManager getSceneManager() {
+        return sceneManager;
+    }
+
+    public static Client getInstance() {
+        return INSTANCE;
     }
 }
