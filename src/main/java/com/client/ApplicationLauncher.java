@@ -16,7 +16,7 @@ public class ApplicationLauncher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         new Client(stage).start();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(SceneType.LOGIN_SCENE.getSceneFile()));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(SceneType.LOGIN_SCENE.getPath()));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setResizable(false);

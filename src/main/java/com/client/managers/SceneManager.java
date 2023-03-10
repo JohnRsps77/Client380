@@ -24,7 +24,7 @@ public class SceneManager {
             parent = cachedScenes.get(sceneType);
             scene.setRoot(parent);
         } else {
-            parent = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getSceneFile())));
+            parent = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getPath())));
             cachedScenes.put(sceneType, parent);
             scene.setRoot(parent);
         }
