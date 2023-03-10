@@ -46,7 +46,7 @@ public class ImageManager {
         try {
             URL url = new URL(link);
             InputStream in = url.openStream();
-            image = new Image(in, 128, 128, false, false);
+            image = new Image(in, 128, 128, true, true);
             cachedImages.put(link, image);
             in.close();
         } catch (IOException e) {
