@@ -5,13 +5,13 @@ public enum SceneType {
     MAIN_SCENE("views/main-view.fxml"),
     SIGNUP_SCENE("views/signup-view.fxml");
 
-    private final String getpath;
+    private final String path;
 
     SceneType(String path) {
-        this.getpath = path;
+        this.path = path;
     }
 
     public String getPath() {
-        return getpath;
+        return path;
     }
 }
