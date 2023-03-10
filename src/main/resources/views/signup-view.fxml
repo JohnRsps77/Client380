@@ -48,7 +48,7 @@
       </Label>
       <ImageView fx:id="imageView" fitHeight="128.0" fitWidth="128.0" layoutX="723.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/UpLoadYourImg.png" />
+            <Image url="@../images/defaultImage.png" />
          </image>
       </ImageView>
       <Button layoutX="579.0" layoutY="361.0" mnemonicParsing="false" onAction="#ChooseImageAction" text="Choose your Image" />

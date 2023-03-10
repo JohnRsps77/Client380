@@ -1,12 +1,11 @@
 package com.client;
 
+import com.client.managers.SceneManager;
 import com.client.model.LoginDetails;
 import com.client.model.RegistrationDetails;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import com.client.managers.ImageManager;
 import javafx.stage.Stage;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -18,15 +17,19 @@ import java.util.concurrent.Executors;
 public class Client implements Runnable {
 
     private static Client INSTANCE;
-    private final SceneManager sceneManager = new SceneManager();
     private static final int PORT = 85;
     private static final String host = "localhost";
     private static final byte STRING_TERMINATOR = 0;
+
     public InputStream inputStream;
     public OutputStream outputStream;
 
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
-    public final Stage primaryStage;
+
+    private final Stage primaryStage;
+
+    private final ImageManager imageManager = new ImageManager();
+    private final SceneManager sceneManager = new SceneManager();
 
     public Client(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -44,7 +47,9 @@ public class Client implements Runnable {
                 int opcode = inputStream.read();
 
                 switch (opcode) {
+                    case 10:
 
+                        break;
                 }
 
             } catch (Exception e) {
@@ -94,12 +99,11 @@ public class Client implements Runnable {
         String username = registrationDetails.username();
         String password = registrationDetails.password();
         String DOB = registrationDetails.DOB();
-        int profileImageLength = registrationDetails.profileImageLength();
-        byte[] profileImageData = registrationDetails.profileImageData();
-        // add 4 to size to include the string terminator for email,username,password and DOB + 1 for opcode and + 2 for profile image length short
-        int size = email.length() + username.length() + password.length() + DOB.length() + profileImageData.length + 7;
-        System.out.println("SIZE: " + size);
+        String imageLink = registrationDetails.imageLink();
+
+        int size = email.length() + username.length() + password.length() + DOB.length() + imageLink.length() + 6;
         ByteBuffer buffer = ByteBuffer.allocate(size);
+
         buffer.put((byte) 0)
                 .put(email.getBytes())
                 .put(STRING_TERMINATOR)
@@ -109,12 +113,8 @@ public class Client implements Runnable {
                 .put(STRING_TERMINATOR)
                 .put(DOB.getBytes())
                 .put(STRING_TERMINATOR)
-                .putShort((short) profileImageLength)
-                .put(profileImageData);
-
-        System.out.println("Putting: " + DOB);
-        System.out.println("Putting profileImageLength: " + (short) profileImageLength + " for data length: " + profileImageData.length);
-
+                .put(imageLink.getBytes())
+                .put(STRING_TERMINATOR);
         try {
             outputStream.write(buffer.array());
         } catch (Exception e) {
@@ -126,7 +126,17 @@ public class Client implements Runnable {
         return sceneManager;
     }
 
+    public ImageManager getImageManager() {
+        return imageManager;
+    }
+
     public static Client getInstance() {
         return INSTANCE;
     }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+
 }
