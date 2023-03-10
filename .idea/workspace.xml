@@ -6,16 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="74bd1f57-d3f2-45cb-b055-5f016569cc16" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/ClientHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/PacketHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/net/out/TempDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/client/screens/FirstScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/build.gradle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
@@ -41,6 +42,9 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Mo8DGqREJBXRKhI7PzjctTox2k" />
   <component name="ProjectViewState">
@@ -83,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678422454488</updated>
-      <workItem from="1678422455531" duration="23000" />
+      <workItem from="1678422455531" duration="218000" />
     </task>
     <servers />
   </component>
