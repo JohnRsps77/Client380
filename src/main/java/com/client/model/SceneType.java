@@ -7,8 +7,8 @@ public enum SceneType {
 
     private final String getpath;
 
-    SceneType(String sceneFile) {
-        this.getpath = sceneFile;
+    SceneType(String path) {
+        this.getpath = path;
     }
 
     public String getPath() {
