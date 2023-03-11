@@ -9,11 +9,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import okhttp3.Response;
 import org.controlsfx.validation.Severity;
@@ -38,11 +36,9 @@ public class SignUpController implements Initializable {
 
     private final ImageManager imageManager = Client.getInstance().getImageManager();
 
-    private final Validator<String> nameLengthValidator = Validator.createPredicateValidator(s -> s.length() >= 5 && s.length() <= 12, "Name should be between 4 and 13 characters long.", Severity.ERROR);
+    private final Validator<String> lengthValidator = Validator.createPredicateValidator(s -> s.length() >= 5 && s.length() <= 15, "Should be between 4 and 16 characters long.", Severity.ERROR);
 
     private final Validator<String> emailValidator = Validator.createPredicateValidator(JMail::isValid, "Please enter a valid email.");
-
-    //private final Validator<String> passwordValidator = Validator.createRegexValidator("Password must include 1 number", Pattern.compile("[0-9 ]"), Severity.ERROR);
 
     private final Validator<LocalDate> dateValidator = Validator.createPredicateValidator(dp ->
                     dp != null && dp.isBefore(ChronoLocalDate.from(ZonedDateTime.now().minusYears(12))),"You must be at least 12 years of age to sign up.");
@@ -73,9 +69,9 @@ public class SignUpController implements Initializable {
 
     public void addValidators() {
         validationSupport = new ValidationSupport();
-        validationSupport.registerValidator(nameField, nameLengthValidator);
+        validationSupport.registerValidator(nameField, lengthValidator);
         validationSupport.registerValidator(emailField, emailValidator);
-        //validationSupport.registerValidator(passwordField, passwordValidator);
+        validationSupport.registerValidator(passwordField, lengthValidator);
         validationSupport.registerValidator(datePicker, dateValidator);
         validationSupport.setErrorDecorationEnabled(false);
     }
