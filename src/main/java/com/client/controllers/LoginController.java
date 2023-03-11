@@ -13,14 +13,16 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
+    private final SceneManager sceneManager = Client.getInstance().getSceneManager();
+
     @FXML
     public void switchToMainScene() throws IOException {
-        Client.getInstance().getSceneManager().switchScene(SceneType.MAIN_SCENE);
+        sceneManager.switchScene(SceneType.MAIN_SCENE);
     }
 
     @FXML
     public void switchToSignUpScene() throws IOException {
-        Client.getInstance().getSceneManager().switchScene(SceneType.SIGNUP_SCENE);
+        sceneManager.switchScene(SceneType.SIGNUP_SCENE);
     }
 
     @Override

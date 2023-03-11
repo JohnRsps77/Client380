@@ -4,6 +4,8 @@ import com.client.managers.SceneManager;
 import com.client.model.LoginDetails;
 import com.client.model.RegistrationDetails;
 import com.client.managers.ImageManager;
+import com.client.model.SceneType;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,7 +29,7 @@ public class Client implements Runnable {
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
 
     private final Stage primaryStage;
-
+    private RegistrationDetails registrationDetails;
     private final ImageManager imageManager = new ImageManager();
     private final SceneManager sceneManager = new SceneManager();
 
@@ -45,13 +47,12 @@ public class Client implements Runnable {
         while(true) {
             try {
                 int opcode = inputStream.read();
-
+                ByteBuffer buffer = ByteBuffer.wrap(inputStream.readNBytes(inputStream.available()));
                 switch (opcode) {
                     case 10:
-
+                        readRegistrationResponse(buffer);
                         break;
                 }
-
             } catch (Exception e) {
                 //@todo add log file
                 System.exit(0);
@@ -95,6 +96,7 @@ public class Client implements Runnable {
     }
 
     public void sendRegistrationDetails(RegistrationDetails registrationDetails) {
+        this.registrationDetails = registrationDetails;
         String email = registrationDetails.email();
         String username = registrationDetails.username();
         String password = registrationDetails.password();
@@ -122,6 +124,20 @@ public class Client implements Runnable {
         }
     }
 
+    public void readRegistrationResponse(ByteBuffer buffer) {
+        boolean success = buffer.get() == 1;
+
+        if(success) {
+            Platform.runLater(() -> {
+                try {
+                    sceneManager.switchScene(SceneType.COMPLETED_REGISTRATION_SCENE);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        }
+    }
+
     public SceneManager getSceneManager() {
         return sceneManager;
     }
@@ -138,5 +154,7 @@ public class Client implements Runnable {
         return primaryStage;
     }
 
-
+    public RegistrationDetails getRegistrationDetails() {
+        return registrationDetails;
+    }
 }

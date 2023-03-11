@@ -24,11 +24,13 @@ public class SceneManager {
             parent = cachedScenes.get(sceneType);
             scene.setRoot(parent);
         } else {
-            parent = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getPath())));
+            parent = FXMLLoader.load((Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getPath()))));
             cachedScenes.put(sceneType, parent);
             scene.setRoot(parent);
         }
 
+        stage.setWidth(sceneType.getWidth());
+        stage.setHeight(sceneType.getHeight());
         stage.show();
     }
 }
