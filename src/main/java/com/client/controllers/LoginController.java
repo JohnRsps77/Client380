@@ -4,14 +4,13 @@ import com.client.Client;
 import com.client.managers.SceneManager;
 import com.client.model.SceneType;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable, Controller {
+public class LoginController implements Controller {
 
     private final SceneManager sceneManager = Client.getInstance().getSceneManager();
 

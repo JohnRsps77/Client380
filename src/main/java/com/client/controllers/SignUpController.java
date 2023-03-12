@@ -31,7 +31,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 import java.util.ResourceBundle;
 
-public class SignUpController implements Initializable, Controller {
+public class SignUpController implements Controller {
 
     private static final String DEFAULT_IMAGE = "https://i.imgur.com/61psZF5.jpg";
     private String imageLink = DEFAULT_IMAGE;
