@@ -3,6 +3,7 @@ package com.client.controllers;
 import com.client.Client;
 import com.client.managers.ImageManager;
 import com.client.model.RegistrationDetails;
+import com.client.model.SceneType;
 import com.sanctionco.jmail.JMail;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -30,9 +31,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 import java.util.ResourceBundle;
 
-public class SignUpController implements Initializable {
+public class SignUpController implements Initializable, Controller {
 
-    private String imageLink = "https://i.imgur.com/61psZF5.jpg";
+    private static final String DEFAULT_IMAGE = "https://i.imgur.com/61psZF5.jpg";
+    private String imageLink = DEFAULT_IMAGE;
 
     private final ImageManager imageManager = Client.getInstance().getImageManager();
 
@@ -103,6 +105,21 @@ public class SignUpController implements Initializable {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    @Override
+    public void clear() {
+        nameField.clear();
+        passwordField.clear();
+        emailField.clear();
+        datePicker.getEditor().clear();
+        imageLink = DEFAULT_IMAGE;
+        imageView.setImage(imageManager.getFXImage(DEFAULT_IMAGE));
+    }
+
+    @FXML
+    public void onCancelButton() throws IOException {
+        Client.getInstance().getSceneManager().switchScene(SceneType.LOGIN_SCENE);
     }
 
     @Override

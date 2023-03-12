@@ -125,7 +125,7 @@ public class Client implements Runnable {
     }
 
     public void readRegistrationResponse(ByteBuffer buffer) {
-        boolean success = buffer.get() == 1;
+        boolean success = buffer.get() == 0;
         if(success) {
             Platform.runLater(() -> {
                 try {

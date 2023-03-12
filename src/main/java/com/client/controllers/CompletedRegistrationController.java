@@ -2,11 +2,13 @@ package com.client.controllers;
 
 import com.client.Client;
 import com.client.model.RegistrationDetails;
+import com.client.model.SceneType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,7 +30,7 @@ public class CompletedRegistrationController implements Initializable {
     }
 
     @FXML
-    public void signInFromRegistration() {
-
+    public void signInFromRegistration() throws IOException {
+        client.getSceneManager().switchScene(SceneType.LOGIN_SCENE);
     }
 }

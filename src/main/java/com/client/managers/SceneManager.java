@@ -1,6 +1,7 @@
 package com.client.managers;
 
 import com.client.Client;
+import com.client.controllers.Controller;
 import com.client.model.SceneType;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,24 +14,26 @@ import java.util.Objects;
 
 public class SceneManager {
 
-    public HashMap<SceneType, Parent> cachedScenes = new HashMap<>();
+    public HashMap<SceneType, SceneController> cache = new HashMap<>();
 
     public void switchScene(SceneType sceneType) throws IOException {
-        Parent parent;
         Stage stage = Client.getInstance().getPrimaryStage();
-        Scene scene = stage.getScene();
 
-        if(cachedScenes.containsKey(sceneType)) {
-            parent = cachedScenes.get(sceneType);
-            scene.setRoot(parent);
+        if(cache.containsKey(sceneType)) {
+            SceneController sceneController = cache.get(sceneType);
+            sceneController.controller().clear();
+            stage.setScene(sceneController.scene);
         } else {
-            parent = FXMLLoader.load((Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getPath()))));
-            cachedScenes.put(sceneType, parent);
-            scene.setRoot(parent);
+            FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getPath())));//(Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getPath()))));
+            Parent parent = fxmlLoader.load();
+            Scene scene = new Scene(parent);
+            cache.put(sceneType, new SceneController(scene, fxmlLoader.getController()));
+            stage.setScene(scene);
         }
 
         stage.setWidth(sceneType.getWidth());
         stage.setHeight(sceneType.getHeight());
-        stage.show();
     }
+
+    public record SceneController(Scene scene, Controller controller){}
 }

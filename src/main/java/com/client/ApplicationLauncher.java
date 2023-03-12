@@ -1,5 +1,6 @@
 package com.client;
 
+import com.client.managers.SceneManager;
 import com.client.model.SceneType;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +25,8 @@ public class ApplicationLauncher extends Application {
         stage.setScene(scene);
         stage.show();
 
-        Client.getInstance().getSceneManager().cachedScenes.put(SceneType.LOGIN_SCENE, root);
+        Client.getInstance().getSceneManager().cache
+                        .put(SceneType.LOGIN_SCENE, new SceneManager.SceneController(scene, fxmlLoader.getController()));
     }
 
     public static void main(String[] args) {
