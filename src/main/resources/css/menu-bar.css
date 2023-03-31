@@ -1,16 +1,19 @@
 .closeButton{
-    -fx-background-color : 102 205 170;
+    -fx-background-color : rgb(102, 205, 170);
 }
 .closeButton:hover{
-    -fx-background-color : #FF0000;
+    -fx-background-color : rgb(255,0,0);
 }
 .closeButton:pressed{
-    -fx-background-color : #dc143c;
+    -fx-background-color : rgb(220,20,60);
 }
 
+.menuBar{
+    -fx-background-color: 	rgb(102, 205, 170);
+}
 .minimizeButton{
-    -fx-background-color : 102 205 170;
+    -fx-background-color : rgb(102,205,170);
 }
 .minimizeButton:hover{
-    -fx-background-color : #7fffd4	;
+    -fx-background-color : rgb(127,255,212);
 }

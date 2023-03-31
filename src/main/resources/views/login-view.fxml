@@ -44,7 +44,7 @@
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <AnchorPane prefHeight="40.0" prefWidth="1000.0" style="-fx-background-color: #66cdaa;">
+      <AnchorPane onMouseDragged="#menuPane_dragged" onMousePressed="#menuPane_pressed" prefHeight="40.0" prefWidth="1000.0" styleClass="menuBar" stylesheets="@../css/menu-bar.css">
          <children>
             <Button fx:id="closeButton" layoutX="959.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="29.0" prefWidth="30.0" styleClass="closeButton" stylesheets="@../css/menu-bar.css" text="X" textFill="WHITE">
                <font>

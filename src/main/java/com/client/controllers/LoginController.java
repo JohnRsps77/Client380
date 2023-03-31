@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.input.InputEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -49,7 +50,24 @@ public class LoginController implements Controller {
     @FXML
     public void minimizeAction() throws IOException
     {
-        sceneManager.minimizeWindow(closeButton);
+        sceneManager.minimizeWindow(minimizeButton);
+    }
+
+    private double x = 0;
+    private double y = 0;
+    @FXML
+    public void menuPane_dragged(MouseEvent event)
+    {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.setX(event.getSceneX() - x);
+        stage.setY(event.getSceneY() - y);
+    }
+
+    @FXML
+    public void menuPane_pressed(MouseEvent event)
+    {
+        x = event.getSceneX();
+        y = event.getSceneY();
     }
 
     @Override
