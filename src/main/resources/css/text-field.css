@@ -1,0 +1,9 @@
+.text-field {
+    -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 2 0 ;
+    -fx-background-radius: 0 ;
+    -fx-text-fill: #66cdaa
+}
+.text-field:focused {
+    -fx-background-color:  #66cdaa, -fx-background ;
+}

@@ -1,0 +1,16 @@
+.closeButton{
+    -fx-background-color : 102 205 170;
+}
+.closeButton:hover{
+    -fx-background-color : #FF0000;
+}
+.closeButton:pressed{
+    -fx-background-color : #dc143c;
+}
+
+.minimizeButton{
+    -fx-background-color : 102 205 170;
+}
+.minimizeButton:hover{
+    -fx-background-color : #7fffd4	;
+}
