@@ -19,6 +19,7 @@ public class LoginController implements Controller {
 
     private final SceneManager sceneManager = Client.getInstance().getSceneManager();
     private boolean isLogin = false;
+
     @FXML
     public void LoginAction() throws IOException
     {
@@ -55,19 +56,21 @@ public class LoginController implements Controller {
 
     private double x = 0;
     private double y = 0;
+
     @FXML
     public void menuPane_dragged(MouseEvent event)
     {
-        Stage stage = (Stage) closeButton.getScene().getWindow();
-        stage.setX(event.getSceneX() - x);
-        stage.setY(event.getSceneY() - y);
+        Stage stage = Client.getInstance().getPrimaryStage();
+        stage.setX(event.getScreenX() + x);
+        stage.setY(event.getScreenY() + y);
     }
 
     @FXML
     public void menuPane_pressed(MouseEvent event)
     {
-        x = event.getSceneX();
-        y = event.getSceneY();
+        Stage stage = Client.getInstance().getPrimaryStage();
+        x = stage.getX() - event.getScreenX();
+        y = stage.getY() - event.getScreenY();
     }
 
     @Override
