@@ -2,12 +2,13 @@ package com.client.controllers;
 
 import com.client.Client;
 import com.client.managers.ImageManager;
+import com.client.managers.SceneManager;
 import com.client.model.RegistrationDetails;
 import com.client.model.SceneType;
 import com.sanctionco.jmail.JMail;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -76,6 +77,21 @@ public class SignUpController implements Controller {
         validationSupport.registerValidator(passwordField, lengthValidator);
         validationSupport.registerValidator(datePicker, dateValidator);
         validationSupport.setErrorDecorationEnabled(false);
+    }
+    private final SceneManager sceneManager = Client.getInstance().getSceneManager();
+    @FXML
+    Button closeButton = new Button();
+    @FXML
+    Button minimizeButton = new Button();
+    @FXML
+    public void closeAction() throws IOException
+    {
+        sceneManager.closeWindow(closeButton);
+    }
+    @FXML
+    public void minimizeAction() throws IOException
+    {
+        sceneManager.minimizeWindow(minimizeButton);
     }
 
     @FXML

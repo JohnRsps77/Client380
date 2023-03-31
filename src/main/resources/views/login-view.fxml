@@ -9,35 +9,83 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: #faf0e6;" styleClass="backgroud" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.LoginController">
    <children>
-      <ImageView fitHeight="563.0" fitWidth="562.0" layoutX="-71.0" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="521.0" fitWidth="1000.0" layoutY="40.0" pickOnBounds="true">
          <image>
             <Image url="@../images/background.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="126.0" fitWidth="166.0" layoutX="672.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="600.0" layoutY="237.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Username">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="598.0" layoutY="309.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Password">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="600.0" layoutY="271.0" prefHeight="25.0" prefWidth="306.0" promptText="username" stylesheets="@../css/text-field.css">
+         <font>
+            <Font name="MT Extra" size="12.0" />
+         </font></TextField>
+      <Button layoutX="598.0" layoutY="410.0" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="38.0" prefWidth="126.0" stylesheets="@../css/button.css" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <PasswordField layoutX="598.0" layoutY="345.0" prefHeight="25.0" prefWidth="306.0" promptText="password" stylesheets="@../css/text-field.css" />
+      <Button layoutX="778.0" layoutY="410.0" mnemonicParsing="false" onAction="#switchToSignUpScene" prefHeight="38.0" prefWidth="126.0" stylesheets="@../css/button.css" text="Create Account" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Label layoutX="598.0" layoutY="467.0" onMouseClicked="#moreHelp" prefHeight="27.0" prefWidth="323.0" stylesheets="@../css/label.css" text="Need help with your account?. Click here">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane onMouseDragged="#menuPane_dragged" onMousePressed="#menuPane_pressed" prefHeight="40.0" prefWidth="1000.0" styleClass="menuBar" stylesheets="@../css/menu-bar.css">
+         <children>
+            <Button fx:id="closeButton" layoutX="959.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="29.0" prefWidth="30.0" styleClass="closeButton" stylesheets="@../css/menu-bar.css" text="X" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="minimizeButton" layoutX="921.0" layoutY="5.0" mnemonicParsing="false" onAction="#minimizeAction" styleClass="minimizeButton" stylesheets="@../css/menu-bar.css" text="_" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="7.0" text="Talk and Share" textFill="WHITE">
+               <font>
+                  <Font name="Magneto Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="483.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="107.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/icon.png" />
          </image>
       </ImageView>
-      <Label layoutX="598.0" layoutY="186.0" prefHeight="27.0" prefWidth="81.0" text="Username">
+      <Label layoutX="52.0" layoutY="347.0" stylesheets="@../css/label.css" text="Talk and Share">
          <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+            <Font name="Magneto Bold" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="598.0" layoutY="279.0" prefHeight="27.0" prefWidth="81.0" text="Password">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="703.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/loginIcon'.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="694.0" layoutY="153.0" stylesheets="@../css/label.css" text="Login">
          <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
-         </font>
-      </Label>
-      <TextField layoutX="598.0" layoutY="232.0" prefHeight="25.0" prefWidth="306.0" />
-      <Button layoutX="598.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="38.0" prefWidth="126.0" text="Login" />
-      <PasswordField layoutX="598.0" layoutY="321.0" prefHeight="25.0" prefWidth="306.0" />
-      <Button layoutX="778.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToSignUpScene" prefHeight="38.0" prefWidth="126.0" text="Create Account" />
-      <Label layoutX="598.0" layoutY="443.0" onMouseClicked="#moreHelp" prefHeight="27.0" prefWidth="323.0" text="Need help with your account?. Click here">
-         <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+            <Font name="Magneto Bold" size="36.0" />
          </font>
       </Label>
    </children>

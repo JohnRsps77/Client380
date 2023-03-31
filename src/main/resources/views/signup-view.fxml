@@ -11,38 +11,42 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="560.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.SignUpController">
+<AnchorPane prefHeight="560.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.SignUpController">
    <children>
-      <ImageView fitHeight="98.0" fitWidth="98.0" layoutX="443.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="560.0" fitWidth="1000.0" layoutX="1.0" pickOnBounds="true">
          <image>
-            <Image url="@../images/icon.png" />
+            <Image url="@../images/background.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="406.0" layoutY="112.0" prefHeight="62.0" prefWidth="188.0" text="SIGN UP">
+      <ImageView fitHeight="98.0" fitWidth="98.0" layoutX="444.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icon.png" />
+         </image></ImageView>
+      <Label layoutX="407.0" layoutY="168.0" prefHeight="62.0" prefWidth="188.0" text="SIGN UP">
          <font>
             <Font name="Gill Sans Ultra Bold" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="77.0" layoutY="266.0" prefHeight="27.0" prefWidth="92.0" text="Name">
+      <Label layoutX="77.0" layoutY="266.0" prefHeight="27.0" prefWidth="92.0" stylesheets="@../css/label.css" text="Name">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="60.0" layoutY="399.0" prefHeight="27.0" prefWidth="81.0" text="Password">
+      <Label layoutX="60.0" layoutY="399.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Password">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="77.0" layoutY="334.0" prefHeight="27.0" prefWidth="81.0" text="Email">
+      <Label layoutX="77.0" layoutY="334.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Email">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="nameField" layoutX="141.0" layoutY="267.0" prefHeight="25.0" prefWidth="240.0" />
-      <TextField fx:id="emailField" layoutX="141.0" layoutY="336.0" prefHeight="25.0" prefWidth="240.0" />
-      <PasswordField fx:id="passwordField" layoutX="141.0" layoutY="400.0" prefHeight="25.0" prefWidth="240.0" />
-      <DatePicker fx:id="datePicker" layoutX="723.0" layoutY="267.0" prefHeight="25.0" prefWidth="168.0" />
-      <Label layoutX="586.0" layoutY="266.0" prefHeight="27.0" prefWidth="106.0" text="Date of birth">
+      <TextField fx:id="nameField" layoutX="141.0" layoutY="267.0" prefHeight="25.0" prefWidth="240.0" stylesheets="@../css/text-field.css" />
+      <TextField fx:id="emailField" layoutX="141.0" layoutY="336.0" prefHeight="25.0" prefWidth="240.0" stylesheets="@../css/text-field.css" />
+      <PasswordField fx:id="passwordField" layoutX="141.0" layoutY="400.0" prefHeight="25.0" prefWidth="240.0" stylesheets="@../css/text-field.css" />
+      <DatePicker fx:id="datePicker" layoutX="723.0" layoutY="267.0" prefHeight="25.0" prefWidth="168.0" stylesheets="@../css/text-field.css" />
+      <Label layoutX="586.0" layoutY="266.0" prefHeight="27.0" prefWidth="106.0" stylesheets="@../css/label.css" text="Date of birth">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
@@ -60,5 +64,29 @@
          </font>
       </Text>
       <Button layoutX="474.0" layoutY="492.0" mnemonicParsing="false" onAction="#onCancelButton" text="Cancel" />
+      <AnchorPane prefHeight="40.0" prefWidth="1001.0" style="-fx-background-color: #66cdaa;">
+         <children>
+            <Button fx:id="closeButton" layoutX="959.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="29.0" prefWidth="30.0" styleClass="closeButton" stylesheets="@../css/menu-bar.css" text="X" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="minimizeButton" layoutX="921.0" layoutY="5.0" mnemonicParsing="false" onAction="#minimizeAction" styleClass="minimizeButton" stylesheets="@../css/menu-bar.css" text="_" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Demi" size="16.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="7.0" text="Talk and Share" textFill="WHITE">
+               <font>
+                  <Font name="Magneto Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="483.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

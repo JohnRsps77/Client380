@@ -1,0 +1,19 @@
+.closeButton{
+    -fx-background-color : rgb(102, 205, 170);
+}
+.closeButton:hover{
+    -fx-background-color : rgb(255,0,0);
+}
+.closeButton:pressed{
+    -fx-background-color : rgb(220,20,60);
+}
+
+.menuBar{
+    -fx-background-color: 	rgb(102, 205, 170);
+}
+.minimizeButton{
+    -fx-background-color : rgb(102,205,170);
+}
+.minimizeButton:hover{
+    -fx-background-color : rgb(127,255,212);
+}
