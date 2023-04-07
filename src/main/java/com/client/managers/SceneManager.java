@@ -3,10 +3,13 @@ package com.client.managers;
 import com.client.Client;
 import com.client.controllers.Controller;
 import com.client.model.SceneType;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
@@ -36,6 +39,13 @@ public class SceneManager {
 
         stage.setWidth(sceneType.getWidth());
         stage.setHeight(sceneType.getHeight());
+
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((screenBounds.getWidth()-stage.getWidth())/2);
+        stage.setY((screenBounds.getHeight()-stage.getHeight())/2);
+
+
+
     }
 
     public void closeWindow(Button closeButton) throws IOException{

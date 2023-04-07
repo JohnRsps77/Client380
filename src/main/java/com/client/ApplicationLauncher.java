@@ -27,8 +27,8 @@ public class ApplicationLauncher extends Application {
         stage.setScene(scene);
         stage.show();
 
-        Client.getInstance().getSceneManager().cache
-                        .put(SceneType.LOGIN_SCENE, new SceneManager.SceneController(scene, fxmlLoader.getController()));
+        //Client.getInstance().getSceneManager().cache
+                        //.put(SceneType.LOGIN_SCENE, new SceneManager.SceneController(scene, fxmlLoader.getController()));
     }
 
     public static void main(String[] args) {

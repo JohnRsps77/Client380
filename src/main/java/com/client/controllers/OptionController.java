@@ -2,26 +2,47 @@ package com.client.controllers;
 
 import com.client.Client;
 import com.client.managers.SceneManager;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OptionController implements Controller{
 
+    @FXML
+    Button name_edit_button = new Button();
+    @FXML
+    Button dob_edit_button = new Button();
+    @FXML
+    Button email_edit_button = new Button();
     @Override
-    public void clear() {
+    public void clear()
+    {
 
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
+    }
+
+    @FXML
+    public void editAvatar() throws IOException
+    {
 
     }
+
+
     private final SceneManager sceneManager = Client.getInstance().getSceneManager();
     @FXML
     Button closeButton = new Button();

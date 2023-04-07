@@ -5,7 +5,8 @@ public enum SceneType {
     MAIN_SCENE("views/main-view.fxml", 1000, 560),
     SIGNUP_SCENE("views/signup-view.fxml", 1000, 560),
     COMPLETED_REGISTRATION_SCENE("views/completed-registration-view.fxml",411, 370),
-    OPTION_SCENE("views/option-view.fxml", 600, 800);
+    OPTION_SCENE("views/option-view.fxml", 600, 750);
+
 
     private final String path;
     private final double width;
