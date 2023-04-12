@@ -2,7 +2,7 @@ package com.client.model;
 
 public enum SceneType {
     LOGIN_SCENE("views/login-view.fxml", 1000, 560),
-    MAIN_SCENE("views/main-view.fxml", 1000, 560),
+    MAIN_SCENE("views/main-view.fxml", 1280, 720),
     SIGNUP_SCENE("views/signup-view.fxml", 1000, 560),
     COMPLETED_REGISTRATION_SCENE("views/completed-registration-view.fxml",411, 370),
     OPTION_SCENE("views/option-view.fxml", 600, 750);
