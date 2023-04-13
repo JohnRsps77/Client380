@@ -3,7 +3,6 @@ package com.client.controllers;
 import com.client.Client;
 import com.client.managers.SceneManager;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,7 +16,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,11 +30,15 @@ public class MainController implements Controller {
     VBox mainVbox;
     @FXML
     TextField txt_Chat;
-    record Message(int userID, String userName, String messageText, String time, String imageLink){};
+    @FXML
+    ScrollPane chatScrollPane;
+
+    record Message(int userID, String userName, String messageText, String time, String imageLink){}
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
+        chatScrollPane.vvalueProperty().bind(mainVbox.heightProperty());
         mainVbox.setSpacing(15);
         Message message = new Message(1,"UserName", "This is a message", "0:00", "images/defaultImage.png");
         createChat(message);
@@ -83,6 +85,7 @@ public class MainController implements Controller {
         {
             Message message = new Message(1, "Usernam", txt_Chat.getText(), "0:00", "images/defaultImage.png");
             createChat(message);
+            txt_Chat.clear();
         }
     }
 

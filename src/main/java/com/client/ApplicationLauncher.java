@@ -18,7 +18,7 @@ public class ApplicationLauncher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         new Client(stage).start();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(SceneType.LOGIN_SCENE.getPath()));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(SceneType.MAIN_SCENE.getPath()));
         stage.initStyle(StageStyle.UNDECORATED);
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
@@ -26,9 +26,7 @@ public class ApplicationLauncher extends Application {
         stage.setTitle(TITLE);
         stage.setScene(scene);
         stage.show();
-
-        //Client.getInstance().getSceneManager().cache
-                        //.put(SceneType.LOGIN_SCENE, new SceneManager.SceneController(scene, fxmlLoader.getController()));
+        Client.getInstance().getSceneManager().cache.put(SceneType.LOGIN_SCENE, new SceneManager.SceneController(scene, fxmlLoader.getController()));
     }
 
     public static void main(String[] args) {

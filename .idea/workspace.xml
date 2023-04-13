@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/ApplicationLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/ApplicationLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" afterDir="false" />
     </list>
@@ -123,6 +124,7 @@
       <workItem from="1678522864987" duration="1929000" />
       <workItem from="1678574135520" duration="1026000" />
       <workItem from="1678578283363" duration="6264000" />
+      <workItem from="1681419673746" duration="931000" />
     </task>
     <servers />
   </component>
