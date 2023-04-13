@@ -8,12 +8,16 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,6 +30,8 @@ public class MainController implements Controller {
     }
     @FXML
     VBox mainVbox;
+    @FXML
+    TextField txt_Chat;
     record Message(int userID, String userName, String messageText, String time, String imageLink){};
 
     @Override
@@ -33,8 +39,6 @@ public class MainController implements Controller {
     {
         mainVbox.setSpacing(15);
         Message message = new Message(1,"UserName", "This is a message", "0:00", "images/defaultImage.png");
-
-
         createChat(message);
     }
 
@@ -71,6 +75,17 @@ public class MainController implements Controller {
 
         mainVbox.getChildren().add(hBox_chat);
     }
+
+    @FXML
+    private void sendMessageByEnter(KeyEvent event)
+    {
+        if(event.getCode() == KeyCode.ENTER)
+        {
+            Message message = new Message(1, "Usernam", txt_Chat.getText(), "0:00", "images/defaultImage.png");
+            createChat(message);
+        }
+    }
+
 
     private final SceneManager sceneManager = Client.getInstance().getSceneManager();
     @FXML

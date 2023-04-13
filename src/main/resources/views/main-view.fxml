@@ -90,7 +90,7 @@
             </ScrollPane>
          </children>
       </VBox>
-      <TextField layoutX="444.0" layoutY="654.0" prefHeight="48.0" prefWidth="461.0" promptText="Type your message here!" style="-fx-background-color: grey;" styleClass="radius" stylesheets="@../css/mainview.css">
+      <TextField fx:id="txt_Chat" layoutX="444.0" layoutY="654.0" onKeyPressed="#sendMessageByEnter" prefHeight="48.0" prefWidth="461.0" promptText="Type your message here!" style="-fx-background-color: grey;" styleClass="radius" stylesheets="@../css/mainview.css">
          <font>
             <Font size="14.0" />
          </font>
