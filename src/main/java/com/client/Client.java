@@ -1,6 +1,7 @@
 package com.client;
 
 import com.client.controllers.MainController;
+import com.client.controllers.SignUpController;
 import com.client.managers.SceneManager;
 import com.client.model.*;
 import com.client.managers.ImageManager;
@@ -177,8 +178,8 @@ public class Client implements Runnable {
     }
 
     public void readRegistrationResponse(ByteBuffer buffer) {
-        boolean success = buffer.get() == 0;
-        if(success) {
+        byte response = buffer.get();
+        if(response==0) {
             Platform.runLater(() -> {
                 try {
                     sceneManager.switchScene(SceneType.COMPLETED_REGISTRATION_SCENE);
@@ -186,7 +187,12 @@ public class Client implements Runnable {
                     throw new RuntimeException(e);
                 }
             });
+            return;
         }
+
+        SignUpController controller = (SignUpController) sceneManager.getController(SceneType.SIGNUP_SCENE);
+        controller.clear();
+        controller.getErrorText().setText("Error when signing up or email is taken");
     }
 
     public SceneManager getSceneManager() {
