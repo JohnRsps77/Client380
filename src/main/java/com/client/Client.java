@@ -1,10 +1,9 @@
 package com.client;
 
+import com.client.controllers.MainController;
 import com.client.managers.SceneManager;
-import com.client.model.LoginDetails;
-import com.client.model.RegistrationDetails;
+import com.client.model.*;
 import com.client.managers.ImageManager;
-import com.client.model.SceneType;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 
@@ -13,6 +12,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -32,6 +35,9 @@ public class Client implements Runnable {
     private RegistrationDetails registrationDetails;
     private final ImageManager imageManager = new ImageManager();
     private final SceneManager sceneManager = new SceneManager();
+    private final HashMap<Long, GroupChat> groupChats = new HashMap<>();
+    private GroupChat selectedGroupChat;
+    private User user;
 
     public Client(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -51,6 +57,9 @@ public class Client implements Runnable {
                 switch (opcode) {
                     case 10:
                         readRegistrationResponse(buffer);
+                        break;
+                    case 11:
+                        readGroupMessage(buffer);
                         break;
                 }
             } catch (Exception e) {
@@ -72,14 +81,59 @@ public class Client implements Runnable {
         }
     }
 
-    public void sendMessage(String message) {
-        byte[] messageBytes = message.getBytes();
-        ByteBuffer buffer = ByteBuffer.allocate(messageBytes.length + 1);
-        buffer.put(messageBytes).put(STRING_TERMINATOR);
+    public void sendMessage(Message message) {
+        byte[] messageBytes = message.text().getBytes();
+        int length = messageBytes.length + 2;
+        ByteBuffer buffer = ByteBuffer.allocate(length);
+        buffer.put((byte) 3).put(messageBytes).put(STRING_TERMINATOR);
         try {
             outputStream.write(buffer.array());
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void readGroupMessage(ByteBuffer buffer) {
+        byte[] bytes = new byte[buffer.remaining()];
+        byte b;
+        int i = 0;
+        while((b = buffer.get()) != 0) {
+            bytes[i] = b;
+            i++;
+        }
+        String text = new String(Arrays.copyOfRange(bytes, 0, i), StandardCharsets.UTF_8);
+        int k = i;
+        while((b = buffer.get()) != 0) {
+            bytes[i] = b;
+            i++;
+        }
+        String name = new String(Arrays.copyOfRange(bytes, k, i), StandardCharsets.UTF_8);
+        int j = i;
+        while((b = buffer.get()) != 0) {
+            bytes[i] = b;
+            i++;
+        }
+        String imageLink = new String(Arrays.copyOfRange(bytes, j, i), StandardCharsets.UTF_8);
+        long senderId = buffer.getLong();
+        long groupId = buffer.getLong();
+        Message message = new Message(senderId, name, text, 0, imageLink);
+        GroupChat groupChat = groupChats.get(groupId);
+        if(groupChat == null) return;
+        groupChat.messageList().add(message);
+        MainController controller = (MainController) sceneManager.getController(SceneType.MAIN_SCENE);
+        Platform.runLater(() -> controller.constructMessage(message));
+    }
+
+    public void switchGroup(long id) {
+        GroupChat groupChat = groupChats.get(id);
+        if(groupChat == null) {
+            return;
+        }
+        MainController controller = (MainController) sceneManager.getController(SceneType.MAIN_SCENE);
+        controller.clear();
+        List<Message> messageList = groupChat.messageList();
+        for(Message m : messageList) {
+            controller.constructMessage(m);
         }
     }
 
@@ -102,10 +156,8 @@ public class Client implements Runnable {
         String password = registrationDetails.password();
         String DOB = registrationDetails.DOB();
         String imageLink = registrationDetails.imageLink();
-
         int size = email.length() + username.length() + password.length() + DOB.length() + imageLink.length() + 6;
         ByteBuffer buffer = ByteBuffer.allocate(size);
-
         buffer.put((byte) 0)
                 .put(email.getBytes())
                 .put(STRING_TERMINATOR)
@@ -155,5 +207,25 @@ public class Client implements Runnable {
 
     public RegistrationDetails getRegistrationDetails() {
         return registrationDetails;
+    }
+
+    public HashMap<Long, GroupChat> getGroupChats() {
+        return groupChats;
+    }
+
+    public GroupChat getSelectedGroupChat() {
+        return selectedGroupChat;
+    }
+
+    public void setSelectedGroupChat(GroupChat selectedGroupChat) {
+        this.selectedGroupChat = selectedGroupChat;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

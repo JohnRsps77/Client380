@@ -31,7 +31,7 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <TextField id="radius" prefHeight="31.0" prefWidth="139.0" promptText="Search" style="-fx-background-color: grey;" styleClass="radius" stylesheets="@../css/mainview.css">
+                        <TextField id="radius" prefHeight="31.0" prefWidth="139.0" promptText="Search" styleClass="radius" stylesheets="@../css/mainview.css">
                            <font>
                               <Font name="Ebrima" size="12.0" />
                            </font>
@@ -41,7 +41,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <Pane prefHeight="2.0" prefWidth="177.0" style="-fx-border-color: black;">
+                  <Pane prefHeight="0.0" prefWidth="336.0" style="-fx-border-color: black;">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -78,7 +78,7 @@
                   </Label>
                </children>
             </HBox>
-            <Pane prefHeight="0.0" prefWidth="177.0" style="-fx-border-color: black;">
+            <Pane prefHeight="0.0" prefWidth="851.0" style="-fx-border-color: black;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -90,21 +90,11 @@
             </ScrollPane>
          </children>
       </VBox>
-      <TextField fx:id="txt_Chat" layoutX="444.0" layoutY="654.0" onKeyPressed="#sendMessageByEnter" prefHeight="48.0" prefWidth="461.0" promptText="Type your message here!" styleClass="radius" stylesheets="@../css/mainview.css">
+      <TextField fx:id="textField" layoutX="444.0" layoutY="654.0" onKeyPressed="#sendMessageByEnter" prefHeight="48.0" prefWidth="461.0" promptText="Type your message here!" styleClass="radius" stylesheets="@../css/mainview.css">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="1138.0" layoutY="656.0" minHeight="-Infinity" minWidth="46.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="54.0" style="-fx-background-color: white;" />
-      <Button layoutX="1064.0" layoutY="652.0" minHeight="12.0" minWidth="46.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="63.0" style="-fx-background-color: white;">
-         <graphic>
-            <ImageView fitHeight="10.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/clipImages.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
       <AnchorPane onMouseDragged="#menuPane_dragged" onMousePressed="#menuPane_pressed" prefHeight="40.0" prefWidth="1280.0" styleClass="menuBar" stylesheets="@../css/menu-bar.css">
          <children>
             <Button fx:id="closeButton" layoutX="1234.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="29.0" prefWidth="30.0" styleClass="closeButton" stylesheets="@../css/menu-bar.css" text="X" textFill="WHITE">
@@ -207,10 +197,5 @@
             </Button>
          </children>
       </VBox>
-      <ImageView fitHeight="29.0" fitWidth="39.0" layoutX="1023.0" layoutY="652.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/send.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

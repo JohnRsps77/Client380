@@ -2,6 +2,8 @@ package com.client.controllers;
 
 import com.client.Client;
 import com.client.managers.SceneManager;
+import com.client.model.Message;
+import com.client.model.User;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -22,60 +24,64 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Controller {
-    @Override
-    public void clear() {
 
-    }
-    @FXML
-    VBox mainVbox;
-    @FXML
-    TextField txt_Chat;
-    @FXML
-    ScrollPane chatScrollPane;
+    private final SceneManager sceneManager = Client.getInstance().getSceneManager();
 
-    record Message(int userID, String userName, String messageText, String time, String imageLink){}
+    @FXML
+    private VBox mainVbox;
+
+    @FXML
+    private TextField textField;
+
+    @FXML
+    private ScrollPane chatScrollPane;
+
+    @FXML
+    private Button closeButton = new Button();
+
+    @FXML
+    private Button minimizeButton = new Button();
+
+    private double x = 0;
+    private double y = 0;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         chatScrollPane.vvalueProperty().bind(mainVbox.heightProperty());
         mainVbox.setSpacing(15);
-        Message message = new Message(1,"UserName", "This is a message", "0:00", "images/defaultImage.png");
-        createChat(message);
     }
 
-    private void createChat(Message message)
+    public void constructMessage(Message message)
     {
-        ImageView profileImgView = new ImageView(new Image(message.imageLink));
-        Label lbl_UserName = new Label(message.userName);
-        Label lbl_Message = new Label(message.messageText);
-        Label lbl_Time = new Label(message.time);
+        Image image = Client.getInstance().getImageManager().getFXImage(message.imageLink());
+        ImageView profileImgView = new ImageView(image);
+        Label username = new Label(message.userName());
+        Label text = new Label(message.text());
+        Label timestamp = new Label("" + message.timestamp());
 
         profileImgView.setPreserveRatio(true);
         profileImgView.setFitHeight(40);
 
-        VBox vBox_profile = new VBox();
-        VBox vBox_message = new VBox();
-        HBox hBox_chat = new HBox();
+        VBox vboxProfile = new VBox();
+        VBox vboxMessage = new VBox();
+        HBox hbox = new HBox();
 
+        vboxProfile.setAlignment(Pos.CENTER);
+        vboxMessage.setSpacing(5);
+        vboxProfile.setSpacing(5);
+        hbox.setSpacing(5);
 
-        vBox_profile.setAlignment(Pos.CENTER);
-        vBox_message.setSpacing(5);
-        vBox_profile.setSpacing(5);
+        hbox.getChildren().add(vboxProfile);
+        hbox.getChildren().add(vboxMessage);
 
-        hBox_chat.setSpacing(5);
+        vboxProfile.getChildren().add(profileImgView);
+        vboxProfile.getChildren().add(username);
 
+        vboxMessage.getChildren().add(text);
+        vboxMessage.getChildren().add(timestamp);
 
-        hBox_chat.getChildren().add(vBox_profile);
-        hBox_chat.getChildren().add(vBox_message);
-
-        vBox_profile.getChildren().add(profileImgView);
-        vBox_profile.getChildren().add(lbl_UserName);
-
-        vBox_message.getChildren().add(lbl_Message);
-        vBox_message.getChildren().add(lbl_Time);
-
-        mainVbox.getChildren().add(hBox_chat);
+        mainVbox.getChildren().add(hbox);
     }
 
     @FXML
@@ -83,31 +89,25 @@ public class MainController implements Controller {
     {
         if(event.getCode() == KeyCode.ENTER)
         {
-            Message message = new Message(1, "Usernam", txt_Chat.getText(), "0:00", "images/defaultImage.png");
-            createChat(message);
-            txt_Chat.clear();
+            if(textField.getText().isEmpty()) return;
+            Client client = Client.getInstance();
+            User user = client.getUser();
+            Client.getInstance().sendMessage(new Message(user.getUuid(), user.getUsername(), textField.getText(), System.currentTimeMillis(), user.getProfileImageLink()));
+            textField.clear();
         }
     }
 
-
-    private final SceneManager sceneManager = Client.getInstance().getSceneManager();
-    @FXML
-    Button closeButton = new Button();
-    @FXML
-    Button minimizeButton = new Button();
     @FXML
     public void closeAction() throws IOException
     {
         sceneManager.closeWindow(closeButton);
     }
+
     @FXML
     public void minimizeAction() throws IOException
     {
         sceneManager.minimizeWindow(minimizeButton);
     }
-
-    private double x = 0;
-    private double y = 0;
 
     @FXML
     public void menuPane_dragged(MouseEvent event)
@@ -123,5 +123,10 @@ public class MainController implements Controller {
         Stage stage = Client.getInstance().getPrimaryStage();
         x = stage.getX() - event.getScreenX();
         y = stage.getY() - event.getScreenY();
+    }
+
+    @Override
+    public void clear() {
+        mainVbox.getChildren().clear();
     }
 }
