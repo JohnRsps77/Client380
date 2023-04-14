@@ -3,6 +3,7 @@ package com.client.controllers;
 import com.client.Client;
 import com.client.managers.SceneManager;
 import com.client.model.Message;
+import com.client.model.SceneType;
 import com.client.model.User;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -17,6 +18,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -95,6 +97,11 @@ public class MainController implements Controller {
             Client.getInstance().sendMessage(new Message(user.getUuid(), user.getUsername(), textField.getText(), System.currentTimeMillis(), user.getProfileImageLink()));
             textField.clear();
         }
+    }
+
+    @FXML
+    private void createGroupPopUp () throws IOException {
+        sceneManager.switchScene(SceneType.CREATE_GROUP_POPUP_SCENE);
     }
 
     @FXML
