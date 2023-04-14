@@ -6,6 +6,7 @@ import com.client.model.Message;
 import com.client.model.SceneType;
 import com.client.model.User;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -33,6 +34,8 @@ public class MainController implements Controller {
     private VBox mainVbox;
 
     @FXML
+    private VBox friendVbox;
+    @FXML
     private TextField textField;
 
     @FXML
@@ -52,6 +55,10 @@ public class MainController implements Controller {
     {
         chatScrollPane.vvalueProperty().bind(mainVbox.heightProperty());
         mainVbox.setSpacing(15);
+        friendVbox.setSpacing(10);
+        friendVbox.setPadding(new Insets(10));
+        createFriendList(1);
+        createFriendList(1);
     }
 
     public void constructMessage(Message message)
@@ -86,6 +93,44 @@ public class MainController implements Controller {
         mainVbox.getChildren().add(hbox);
     }
 
+    public void createFriendList(int userID)
+    {
+        String friendImgLink = "images/profile.png";
+        String friendName = "Friend's Name";
+        HBox friendHBox = new HBox();
+        Image friendImg = new Image(friendImgLink);
+        ImageView friendImgView = new ImageView(friendImg);
+        friendImgView.setPreserveRatio(true);
+        friendImgView.setFitHeight(40);
+
+        Label lbl_Friend = new Label(friendName);
+        friendHBox.setSpacing(5);
+        lbl_Friend.setPadding(new Insets(10));
+
+
+
+        friendHBox.getChildren().add(friendImgView);
+        friendHBox.getChildren().add(lbl_Friend);
+
+        friendHBox.setStyle("-fx-background-color: rgb(102, 205, 170);");
+        friendVbox.getChildren().add(friendHBox);
+
+        friendHBox.addEventFilter(MouseEvent.MOUSE_ENTERED, even ->{
+            friendHBox.setStyle("-fx-background-color: rgb(32,178,170);");
+        });
+        friendHBox.addEventFilter(MouseEvent.MOUSE_EXITED, event -> {
+            friendHBox.setStyle("-fx-background-color: rgb(102, 205, 170);");
+        });
+        friendHBox.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
+            getChatFriend();
+        });
+
+    }
+
+    private void getChatFriend()
+    {
+
+    }
     @FXML
     private void sendMessageByEnter(KeyEvent event)
     {

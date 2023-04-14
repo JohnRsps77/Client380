@@ -46,9 +46,9 @@
                   <Insets />
                </opaqueInsets>
             </Pane>
-            <ScrollPane fx:id="chatScrollPane" focusTraversable="false" prefHeight="538.0" prefWidth="687.0">
+            <ScrollPane fx:id="chatScrollPane" focusTraversable="false" prefHeight="535.0" prefWidth="850.0">
                <content>
-                  <VBox fx:id="mainVbox" alignment="BOTTOM_LEFT" prefHeight="533.0" prefWidth="849.0" />
+                  <VBox fx:id="mainVbox" alignment="BOTTOM_LEFT" prefHeight="535.0" prefWidth="850.0" />
                </content>
             </ScrollPane>
          </children>
@@ -162,13 +162,13 @@
       </VBox>
       <AnchorPane layoutX="63.0" layoutY="40.0" prefHeight="682.0" prefWidth="364.0">
          <children>
-            <Button layoutX="138.0" layoutY="631.0" mnemonicParsing="false" onAction="#createGroupPopUp" stylesheets="@../css/button.css" text="Create Group" />
-            <TextField layoutX="107.0" layoutY="21.0" />
-            <ScrollPane layoutX="14.0" layoutY="60.0" prefHeight="564.0" prefWidth="336.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
+            <TextField layoutX="117.0" layoutY="22.0" />
+            <ScrollPane layoutX="14.0" layoutY="60.0" prefHeight="570.0" prefWidth="340.0">
+               <content>
+                  <VBox fx:id="friendVbox" prefHeight="570.0" prefWidth="331.0" />
+               </content>
             </ScrollPane>
+            <Button layoutX="138.0" layoutY="634.0" mnemonicParsing="false" onAction="#createGroupPopUp" stylesheets="@../css/button.css" text="Create Group" />
          </children>
       </AnchorPane>
    </children>
