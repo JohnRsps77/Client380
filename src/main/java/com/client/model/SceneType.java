@@ -6,7 +6,8 @@ public enum SceneType {
     SIGNUP_SCENE("views/signup-view.fxml", 1000, 560),
     COMPLETED_REGISTRATION_SCENE("views/completed-registration-view.fxml",411, 370),
     OPTION_SCENE("views/option-view.fxml", 600, 750),
-    CREATE_GROUP_POPUP_SCENE("views/create-group.fxml",600,400);
+    CREATE_GROUP_POPUP_SCENE("views/create-group.fxml",600,400),
+    ADD_FRIEND_SCENE("views/add-friend.fxml", 600,350);
 
 
     private final String path;

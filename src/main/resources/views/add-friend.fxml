@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.AddFriendController">
    <children>
@@ -24,10 +25,21 @@
             <Image url="@../images/addFriend.png" />
          </image>
       </ImageView>
-      <Label layoutX="59.0" layoutY="205.0" stylesheets="@../css/label.css" text="Enter your group name">
+      <Label layoutX="59.0" layoutY="205.0" stylesheets="@../css/label.css" text="Enter your friend name">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
+      <TextField layoutX="59.0" layoutY="238.0" prefHeight="25.0" prefWidth="506.0" stylesheets="@../css/text-field.css" />
+      <Button layoutX="59.0" layoutY="303.0" mnemonicParsing="false" onAction="#backToMain" styleClass="changepasswordButton" stylesheets="@../css/menu-bar.css" text="Back" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="478.0" layoutY="303.0" mnemonicParsing="false" onAction="#addFriend" stylesheets="@../css/button.css" text="Add Friend" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

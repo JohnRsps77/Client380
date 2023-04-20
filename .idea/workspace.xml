@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f0882c1-348b-4857-bd8b-ed578ef3c91d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/AddFriendController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/addFriend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/groupAdd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/add-friend.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/AddFriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/AddFriendController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/model/SceneType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/model/SceneType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/add-friend.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/add-friend.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

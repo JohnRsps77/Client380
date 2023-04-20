@@ -151,7 +151,7 @@ public class MainController implements Controller {
 
     @FXML
     private void addFriendPopUp() throws  IOException{
-
+        sceneManager.switchScene(SceneType.ADD_FRIEND_SCENE);
     }
     @FXML
     public void closeAction() throws IOException
