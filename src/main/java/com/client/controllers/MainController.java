@@ -150,6 +150,10 @@ public class MainController implements Controller {
     }
 
     @FXML
+    private void addFriendPopUp() throws  IOException{
+
+    }
+    @FXML
     public void closeAction() throws IOException
     {
         sceneManager.closeWindow(closeButton);

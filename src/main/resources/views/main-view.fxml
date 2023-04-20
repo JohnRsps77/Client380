@@ -168,7 +168,8 @@
                   <VBox fx:id="friendVbox" prefHeight="570.0" prefWidth="331.0" />
                </content>
             </ScrollPane>
-            <Button layoutX="138.0" layoutY="634.0" mnemonicParsing="false" onAction="#createGroupPopUp" stylesheets="@../css/button.css" text="Create Group" />
+            <Button layoutX="47.0" layoutY="642.0" mnemonicParsing="false" onAction="#createGroupPopUp" styleClass="editbutton" stylesheets="@../css/edit-button.css" text="Create Group" textFill="WHITE" />
+            <Button layoutX="267.0" layoutY="642.0" mnemonicParsing="false" stylesheets="@../css/button.css" text="Add Friend" />
          </children>
       </AnchorPane>
    </children>
