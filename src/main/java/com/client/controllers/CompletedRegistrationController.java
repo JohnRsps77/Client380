@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CompletedRegistrationController implements Initializable {
+public class CompletedRegistrationController implements Controller {
 
     private Client client = Client.getInstance();
 
@@ -32,5 +32,10 @@ public class CompletedRegistrationController implements Initializable {
     @FXML
     public void signInFromRegistration() throws IOException {
         client.getSceneManager().switchScene(SceneType.LOGIN_SCENE);
+    }
+
+    @Override
+    public void clear() {
+
     }
 }

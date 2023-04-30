@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f0882c1-348b-4857-bd8b-ed578ef3c91d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+=======
+>>>>>>> 1652c3ddb52be3896ac678b15fc94755d6232894
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/AddFriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/AddFriendController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/client/model/SceneType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/client/model/SceneType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/add-friend.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/add-friend.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/main-view.fxml" afterDir="false" />
+<<<<<<< HEAD
+>>>>>>> 1652c3ddb52be3896ac678b15fc94755d6232894
+=======
+>>>>>>> 1652c3ddb52be3896ac678b15fc94755d6232894
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +54,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="JavaFXApplication" />
+        <option value="Record" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -72,7 +88,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.kotlinCompiler&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -81,9 +97,12 @@
       <recent name="E:\University\Srping 2023\COMP 380\Client380\src\main\resources\images" />
       <recent name="C:\Users\John\Desktop\Source\Client380\src\main\resources\images" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.client.controllers" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="ApplicationLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationLauncher" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.client.ApplicationLauncher" />
       <module name="Client380.main" />
       <extension name="coverage">
@@ -117,6 +136,20 @@
       <workItem from="1678522864987" duration="1929000" />
       <workItem from="1678574135520" duration="1026000" />
       <workItem from="1678578283363" duration="6264000" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <workItem from="1681248433179" duration="11000" />
+=======
+=======
+>>>>>>> 1652c3ddb52be3896ac678b15fc94755d6232894
+      <workItem from="1681419673746" duration="1167000" />
+      <workItem from="1681427072418" duration="846000" />
+      <workItem from="1681427929174" duration="11559000" />
+      <workItem from="1681450230856" duration="1341000" />
+<<<<<<< HEAD
+>>>>>>> 1652c3ddb52be3896ac678b15fc94755d6232894
+=======
+>>>>>>> 1652c3ddb52be3896ac678b15fc94755d6232894
     </task>
     <servers />
   </component>
@@ -131,7 +164,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Client380$ApplicationLauncher.ic" NAME="ApplicationLauncher Coverage Results" MODIFIED="1680290299007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Client380$ApplicationLauncher.ic" NAME="ApplicationLauncher Coverage Results" MODIFIED="1681510490746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.client.managers.*</FILTER>
     </SUITE>
   </component>

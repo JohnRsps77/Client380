@@ -2,12 +2,14 @@ package com.client.controllers;
 
 import com.client.Client;
 import com.client.managers.SceneManager;
-import com.client.model.SceneType;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.input.InputEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -15,36 +17,33 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController implements Controller {
+public class OptionController implements Controller{
+
+    @FXML
+    Button name_edit_button = new Button();
+    @FXML
+    Button dob_edit_button = new Button();
+    @FXML
+    Button email_edit_button = new Button();
+    @Override
+    public void clear()
+    {
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+    }
+
+    @FXML
+    public void editAvatar() throws IOException
+    {
+
+    }
+
 
     private final SceneManager sceneManager = Client.getInstance().getSceneManager();
-    private boolean isLogin = false;
-
-    @FXML
-    public void LoginAction() throws IOException
-    {
-        isLogin = true;
-        if(isLogin == true)
-        {
-            sceneManager.switchScene(SceneType.MAIN_SCENE);
-        }
-    }
-    @FXML
-    public void switchToMainScene() throws IOException {
-        sceneManager.switchScene(SceneType.MAIN_SCENE);
-    }
-
-    @FXML
-    public void switchToSignUpScene() throws IOException {
-        sceneManager.switchScene(SceneType.SIGNUP_SCENE);
-    }
-
-    @FXML
-    public void switchToOptionSceneTest() throws  IOException
-    {
-        sceneManager.switchScene(SceneType.OPTION_SCENE);
-    }
-
     @FXML
     Button closeButton = new Button();
     @FXML
@@ -77,22 +76,5 @@ public class LoginController implements Controller {
         Stage stage = Client.getInstance().getPrimaryStage();
         x = stage.getX() - event.getScreenX();
         y = stage.getY() - event.getScreenY();
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
-
-    @FXML
-    public void moreHelp(MouseEvent mouseEvent) {
-        System.out.println("Clicked");
-    }
-
-
-
-    @Override
-    public void clear()
-    {
-
     }
 }
