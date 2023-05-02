@@ -2,9 +2,15 @@ package com.client.controllers;
 
 import com.client.Client;
 import com.client.managers.SceneManager;
+import com.client.model.Message;
 import com.client.model.SceneType;
+import com.client.model.User;
 import javafx.fxml.FXML;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.input.InputEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
@@ -44,12 +50,25 @@ public class LoginController implements Controller {
     {
         sceneManager.switchScene(SceneType.OPTION_SCENE);
     }
+    @FXML
+    TextField txt_UserName = new TextField();
+    @FXML
+    PasswordField txt_Password = new PasswordField();
+
 
     @FXML
     Button closeButton = new Button();
     @FXML
     Button minimizeButton = new Button();
+
     @FXML
+    private void sendMessageByEnter(KeyEvent event) throws IOException {
+        if(event.getCode() == KeyCode.ENTER)
+        {
+            LoginAction();
+        }
+    }
+
     public void closeAction() throws IOException
     {
         sceneManager.closeWindow(closeButton);
