@@ -20,7 +20,7 @@
       </ImageView>
       <ImageView fitHeight="98.0" fitWidth="98.0" layoutX="444.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/icon.png" />
+            <Image url="@../images/signup.png" />
          </image></ImageView>
       <Label layoutX="384.0" layoutY="164.0" prefHeight="62.0" prefWidth="218.0" stylesheets="@../css/label.css" text="SIGN  UP">
          <font>
@@ -95,7 +95,7 @@
       </ImageView>
       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="97.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/lock.png" />
+            <Image url="@../images/password.png" />
          </image>
       </ImageView>
    </children>
