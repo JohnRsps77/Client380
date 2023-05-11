@@ -19,7 +19,7 @@ public class SceneManager {
 
     public HashMap<SceneType, SceneController> cache = new HashMap<>();
 
-    public void switchScene(SceneType sceneType) throws IOException {
+    public void switchScene(SceneType sceneType) {
         Stage stage = Client.getInstance().getPrimaryStage();
 
         if(cache.containsKey(sceneType)) {
@@ -28,7 +28,15 @@ public class SceneManager {
             stage.setScene(sceneController.scene);
         } else {
             FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getPath())));//(Objects.requireNonNull(getClass().getClassLoader().getResource(sceneType.getPath()))));
-            Parent parent = fxmlLoader.load();
+            Parent parent = null;
+            try {
+                parent = fxmlLoader.load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if(parent == null) {
+                return;
+            }
             Scene scene = new Scene(parent);
             putCache(sceneType, new SceneController(scene, fxmlLoader.getController()));
             stage.setScene(scene);

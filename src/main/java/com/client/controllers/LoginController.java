@@ -2,6 +2,7 @@ package com.client.controllers;
 
 import com.client.Client;
 import com.client.managers.SceneManager;
+import com.client.model.LoginDetails;
 import com.client.model.Message;
 import com.client.model.SceneType;
 import com.client.model.User;
@@ -24,48 +25,40 @@ import java.util.ResourceBundle;
 public class LoginController implements Controller {
 
     private final SceneManager sceneManager = Client.getInstance().getSceneManager();
-    private boolean isLogin = false;
 
     @FXML
-    public void LoginAction() throws IOException
-    {
-        isLogin = true;
-        if(isLogin == true)
-        {
-            sceneManager.switchScene(SceneType.MAIN_SCENE);
+    private TextField username;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private Button closeButton = new Button();
+    @FXML
+    private Button minimizeButton = new Button();
+
+    @FXML
+    public void onLoginClicked() {
+        if(username.getText().length() > 0 && password.getText().length() > 0) {
+            Client.getInstance().sendLoginDetails(new LoginDetails(username.getText(), password.getText()));
         }
-    }
-    @FXML
-    public void switchToMainScene() throws IOException {
-        sceneManager.switchScene(SceneType.MAIN_SCENE);
+      //  sceneManager.switchScene(SceneType.MAIN_SCENE);
     }
 
     @FXML
-    public void switchToSignUpScene() throws IOException {
+    public void switchToSignUpScene() {
         sceneManager.switchScene(SceneType.SIGNUP_SCENE);
     }
 
     @FXML
-    public void switchToOptionSceneTest() throws  IOException
-    {
+    public void switchToOptionSceneTest() {
         sceneManager.switchScene(SceneType.OPTION_SCENE);
     }
-    @FXML
-    TextField txt_UserName = new TextField();
-    @FXML
-    PasswordField txt_Password = new PasswordField();
-
 
     @FXML
-    Button closeButton = new Button();
-    @FXML
-    Button minimizeButton = new Button();
-
-    @FXML
-    private void sendMessageByEnter(KeyEvent event) throws IOException {
+    private void sendMessageByEnter(KeyEvent event) {
         if(event.getCode() == KeyCode.ENTER)
         {
-            LoginAction();
         }
     }
 

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -147,7 +148,20 @@ public class Client implements Runnable {
     }
 
     public void sendLoginDetails(LoginDetails loginDetails) {
-
+        String username = loginDetails.username();
+        String password = loginDetails.password();
+        int size = username.length() + password.length() + 3;
+        ByteBuffer buffer = ByteBuffer.allocate(size);
+        buffer.put((byte) 1)
+                .put(username.getBytes())
+                .put(STRING_TERMINATOR)
+                .put(password.getBytes())
+                .put(STRING_TERMINATOR);
+        try {
+            outputStream.write(buffer.array());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void sendRegistrationDetails(RegistrationDetails registrationDetails) {
@@ -180,13 +194,7 @@ public class Client implements Runnable {
     public void readRegistrationResponse(ByteBuffer buffer) {
         byte response = buffer.get();
         if(response==0) {
-            Platform.runLater(() -> {
-                try {
-                    sceneManager.switchScene(SceneType.COMPLETED_REGISTRATION_SCENE);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+            Platform.runLater(() -> sceneManager.switchScene(SceneType.COMPLETED_REGISTRATION_SCENE));
             return;
         }
 

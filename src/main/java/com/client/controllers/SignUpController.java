@@ -135,7 +135,7 @@ public class SignUpController implements Controller {
     }
 
     @FXML
-    public void onCancelButton() throws IOException {
+    public void onCancelButton() {
         Client.getInstance().getSceneManager().switchScene(SceneType.LOGIN_SCENE);
     }
 
