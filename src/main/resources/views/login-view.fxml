@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: #faf0e6;" styleClass="backgroud" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: #faf0e6;" styleClass="backgroud" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.client.controllers.LoginController">
    <children>
       <ImageView fitHeight="521.0" fitWidth="1000.0" layoutY="40.0" pickOnBounds="true">
          <image>
@@ -88,7 +88,6 @@
             <Font name="Magneto Bold" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="145.0" layoutY="436.0" mnemonicParsing="false" onAction="#switchToOptionSceneTest" text="Move to option Test" />
       <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="600.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/user.png" />

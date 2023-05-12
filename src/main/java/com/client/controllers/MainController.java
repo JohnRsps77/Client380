@@ -1,6 +1,7 @@
 package com.client.controllers;
 
 import com.client.Client;
+import com.client.managers.ImageManager;
 import com.client.managers.SceneManager;
 import com.client.model.Message;
 import com.client.model.SceneType;
@@ -24,6 +25,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainController implements Controller {
@@ -42,13 +45,26 @@ public class MainController implements Controller {
     private ScrollPane chatScrollPane;
 
     @FXML
+    Label lbl_ChatName;
+
+    @FXML
+    ImageView chatImgView;
+
+    @FXML
     private Button closeButton = new Button();
 
     @FXML
     private Button minimizeButton = new Button();
 
+    private String clickedUserId = "a";
+
+    List<HBox> list_FriendHBox = new ArrayList<HBox>();
+
+
     private double x = 0;
     private double y = 0;
+
+    boolean isClicked = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -57,8 +73,9 @@ public class MainController implements Controller {
         mainVbox.setSpacing(15);
         friendVbox.setSpacing(10);
         friendVbox.setPadding(new Insets(10));
+
         createFriendList(1);
-        createFriendList(1);
+        createFriendList(2);
     }
 
     public void constructMessage(Message message)
@@ -95,7 +112,7 @@ public class MainController implements Controller {
 
     public void createFriendList(int userID)
     {
-        String friendImgLink = "images/profile.png";
+        String friendImgLink = "https://i.imgur.com/vfefCLZ.jpeg";
         String friendName = "Friend's Name";
         HBox friendHBox = new HBox();
         Image friendImg = new Image(friendImgLink);
@@ -112,25 +129,38 @@ public class MainController implements Controller {
         friendHBox.getChildren().add(friendImgView);
         friendHBox.getChildren().add(lbl_Friend);
 
+        list_FriendHBox.add(friendHBox);
         friendHBox.setStyle("-fx-background-color: rgb(102, 205, 170);");
+        friendHBox.setId(new String(Integer.toString(userID)));
         friendVbox.getChildren().add(friendHBox);
+
+
 
         friendHBox.addEventFilter(MouseEvent.MOUSE_ENTERED, even ->{
             friendHBox.setStyle("-fx-background-color: rgb(32,178,170);");
         });
+
         friendHBox.addEventFilter(MouseEvent.MOUSE_EXITED, event -> {
-            friendHBox.setStyle("-fx-background-color: rgb(102, 205, 170);");
+
+            if(clickedUserId != friendHBox.getId())
+            {
+                friendHBox.setStyle("-fx-background-color: rgb(102, 205, 170);");
+            }
         });
         friendHBox.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
-            getChatFriend();
+            for(int i = 0; i < list_FriendHBox.size(); i++)
+            {
+                list_FriendHBox.get(i).setStyle("-fx-background-color: rgb(102, 205, 170);");
+            }
+            clickedUserId = friendHBox.getId();
+            friendHBox.setStyle("-fx-background-color: rgb(32,178,170);");
+            lbl_ChatName.setText(friendName);
+            chatImgView.setImage(Client.getInstance().getImageManager().getFXImage(friendImgLink));
         });
 
     }
 
-    private void getChatFriend()
-    {
 
-    }
     @FXML
     private void sendMessageByEnter(KeyEvent event)
     {

@@ -42,7 +42,7 @@ public class LoginController implements Controller {
         if(username.getText().length() > 0 && password.getText().length() > 0) {
             Client.getInstance().sendLoginDetails(new LoginDetails(username.getText(), password.getText()));
         }
-      //  sceneManager.switchScene(SceneType.MAIN_SCENE);
+      sceneManager.switchScene(SceneType.MAIN_SCENE);
     }
 
     @FXML
@@ -59,6 +59,7 @@ public class LoginController implements Controller {
     private void sendMessageByEnter(KeyEvent event) {
         if(event.getCode() == KeyCode.ENTER)
         {
+            onLoginClicked();
         }
     }
 
