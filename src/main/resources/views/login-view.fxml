@@ -16,25 +16,25 @@
             <Image url="@../images/background.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="600.0" layoutY="237.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Username">
+      <Label layoutX="639.0" layoutY="236.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Username">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="598.0" layoutY="309.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Password">
+      <Label layoutX="639.0" layoutY="310.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Password">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="600.0" layoutY="271.0" prefHeight="25.0" prefWidth="306.0" promptText="username" stylesheets="@../css/text-field.css">
+      <TextField fx:id="username" layoutX="600.0" layoutY="271.0" prefHeight="25.0" prefWidth="306.0" promptText="username" stylesheets="@../css/text-field.css">
          <font>
             <Font name="MT Extra" size="12.0" />
          </font></TextField>
-      <Button layoutX="598.0" layoutY="410.0" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="38.0" prefWidth="126.0" stylesheets="@../css/button.css" text="Login" textFill="WHITE">
+      <Button layoutX="598.0" layoutY="410.0" mnemonicParsing="false" onAction="#onLoginClicked" prefHeight="38.0" prefWidth="126.0" stylesheets="@../css/button.css" text="Login" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
-      <PasswordField layoutX="598.0" layoutY="345.0" prefHeight="25.0" prefWidth="306.0" promptText="password" stylesheets="@../css/text-field.css" />
+      <PasswordField fx:id="password" layoutX="598.0" layoutY="345.0" onKeyPressed="#sendMessageByEnter" prefHeight="25.0" prefWidth="306.0" promptText="password" stylesheets="@../css/text-field.css" />
       <Button layoutX="778.0" layoutY="410.0" mnemonicParsing="false" onAction="#switchToSignUpScene" prefHeight="38.0" prefWidth="126.0" stylesheets="@../css/button.css" text="Create Account" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -88,5 +88,15 @@
             <Font name="Magneto Bold" size="36.0" />
          </font>
       </Label>
+      <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="600.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="600.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/password.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

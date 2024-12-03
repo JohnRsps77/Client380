@@ -1,0 +1,7 @@
+
+.editbutton{
+    -fx-background-color: rgb(0,128,128);
+}
+.editbutton:hover{
+    -fx-background-color: rgb(32,178,170);
+}

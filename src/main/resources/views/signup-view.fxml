@@ -20,32 +20,17 @@
       </ImageView>
       <ImageView fitHeight="98.0" fitWidth="98.0" layoutX="444.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/icon.png" />
+            <Image url="@../images/signup.png" />
          </image></ImageView>
-      <Label layoutX="407.0" layoutY="168.0" prefHeight="62.0" prefWidth="188.0" text="SIGN UP">
+      <Label layoutX="384.0" layoutY="164.0" prefHeight="62.0" prefWidth="218.0" stylesheets="@../css/label.css" text="SIGN  UP">
          <font>
-            <Font name="Gill Sans Ultra Bold" size="36.0" />
+            <Font name="Magneto Bold" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="77.0" layoutY="266.0" prefHeight="27.0" prefWidth="92.0" stylesheets="@../css/label.css" text="Name">
-         <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="60.0" layoutY="399.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Password">
-         <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="77.0" layoutY="334.0" prefHeight="27.0" prefWidth="81.0" stylesheets="@../css/label.css" text="Email">
-         <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="nameField" layoutX="141.0" layoutY="267.0" prefHeight="25.0" prefWidth="240.0" stylesheets="@../css/text-field.css" />
-      <TextField fx:id="emailField" layoutX="141.0" layoutY="336.0" prefHeight="25.0" prefWidth="240.0" stylesheets="@../css/text-field.css" />
-      <PasswordField fx:id="passwordField" layoutX="141.0" layoutY="400.0" prefHeight="25.0" prefWidth="240.0" stylesheets="@../css/text-field.css" />
-      <DatePicker fx:id="datePicker" layoutX="723.0" layoutY="267.0" prefHeight="25.0" prefWidth="168.0" stylesheets="@../css/text-field.css" />
+      <TextField fx:id="nameField" layoutX="141.0" layoutY="267.0" prefHeight="25.0" prefWidth="240.0" promptText="Name" stylesheets="@../css/text-field.css" />
+      <TextField fx:id="emailField" layoutX="141.0" layoutY="336.0" prefHeight="25.0" prefWidth="240.0" promptText="Email" stylesheets="@../css/text-field.css" />
+      <PasswordField fx:id="passwordField" layoutX="141.0" layoutY="400.0" prefHeight="25.0" prefWidth="240.0" promptText="Password" stylesheets="@../css/text-field.css" />
+      <DatePicker fx:id="datePicker" layoutX="723.0" layoutY="267.0" prefHeight="25.0" prefWidth="168.0" promptText="Date of birth" stylesheets="@../css/text-field.css" />
       <Label layoutX="586.0" layoutY="266.0" prefHeight="27.0" prefWidth="106.0" stylesheets="@../css/label.css" text="Date of birth">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
@@ -56,14 +41,23 @@
             <Image url="@../images/defaultImage.png" />
          </image>
       </ImageView>
-      <Button layoutX="731.0" layoutY="479.0" mnemonicParsing="false" onAction="#ChooseImageAction" text="Choose your Image" />
-      <Button layoutX="452.0" layoutY="454.0" mnemonicParsing="false" onAction="#SignUpAction" text="Create account" />
+      <Button layoutX="710.0" layoutY="477.0" mnemonicParsing="false" onAction="#ChooseImageAction" stylesheets="@../css/button.css" text="Choose your Image" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="16.0" />
+         </font></Button>
+      <Button layoutX="438.0" layoutY="454.0" mnemonicParsing="false" onAction="#SignUpAction" stylesheets="@../css/button.css" text="Create account" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="16.0" />
+         </font></Button>
       <Text fx:id="successMessage" fill="#67b508" layoutX="394.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Button layoutX="474.0" layoutY="492.0" mnemonicParsing="false" onAction="#onCancelButton" text="Cancel" />
+      <Button layoutX="468.0" layoutY="498.0" mnemonicParsing="false" onAction="#onCancelButton" styleClass="changepasswordButton" stylesheets="@../css/menu-bar.css" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="16.0" />
+         </font></Button>
       <AnchorPane prefHeight="40.0" prefWidth="1001.0" style="-fx-background-color: #66cdaa;">
          <children>
             <Button fx:id="closeButton" layoutX="959.0" layoutY="5.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="29.0" prefWidth="30.0" styleClass="closeButton" stylesheets="@../css/menu-bar.css" text="X" textFill="WHITE">
@@ -88,5 +82,21 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <Text fx:id="errorText" fill="RED" layoutX="390.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error when signing up or email is taken" />
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="95.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="97.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/email.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="97.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/password.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

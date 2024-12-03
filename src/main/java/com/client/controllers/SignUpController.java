@@ -8,12 +8,10 @@ import com.client.model.SceneType;
 import com.sanctionco.jmail.JMail;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import okhttp3.Response;
 import org.controlsfx.validation.Severity;
@@ -58,6 +56,8 @@ public class SignUpController implements Controller {
     private DatePicker datePicker;
     @FXML
     private ImageView imageView;
+    @FXML
+    private Text errorText;
 
     @FXML
     public void SignUpAction() {
@@ -125,6 +125,7 @@ public class SignUpController implements Controller {
 
     @Override
     public void clear() {
+        errorText.setText("");
         nameField.clear();
         passwordField.clear();
         emailField.clear();
@@ -134,12 +135,17 @@ public class SignUpController implements Controller {
     }
 
     @FXML
-    public void onCancelButton() throws IOException {
+    public void onCancelButton() {
         Client.getInstance().getSceneManager().switchScene(SceneType.LOGIN_SCENE);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        errorText.setText("");
         Platform.runLater(this::addValidators); //must call run later or reflection error occurs
+    }
+
+    public Text getErrorText() {
+        return errorText;
     }
 }

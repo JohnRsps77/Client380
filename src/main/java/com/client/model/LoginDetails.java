@@ -1,4 +1,4 @@
 package com.client.model;
 
-public record LoginDetails() {
+public record LoginDetails(String username, String password) {
 }
